@@ -1,0 +1,15 @@
+.button-add {
+  background-color: $btn-add-color;
+  padding: 0 16px;
+  line-height: 30px;
+  border-radius: 10px;
+  @include btnAdd;
+  color: $btn-color-text;
+  text-align: center;
+  touch-action: manipulation;
+  user-select: none;
+  cursor: pointer;
+  &:hover {
+    background-color: white;
+  }
+}
