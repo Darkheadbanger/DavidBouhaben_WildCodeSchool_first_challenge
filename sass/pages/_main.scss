@@ -1,0 +1,10 @@
+main {
+  max-width: 960px;
+  margin: 0 auto;
+  .member-list {
+    color: $member-text-color;
+    .member-item {
+      padding: 0.25em 0;
+    }
+  }
+}

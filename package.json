@@ -1,0 +1,22 @@
+{
+  "name": "davidbouhaben_wildcodeschool_first_challenge",
+  "version": "1.0.0",
+  "description": "test technique wild code school",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass --watch ./sass/main.scss:./public/css/style.css --style compressed",
+    "prefix": "postcss ./public/css/style.css --use autoprefixer -d ./public/css/prefixed/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Darkheadbanger/DavidBouhaben_WildCodeSchool_first_challenge.git"
+  },
+  "author": "David Bouhaben",
+  "license": "ISC",
+  "browerslist": "last 4 versions",
+  "bugs": {
+    "url": "https://github.com/Darkheadbanger/DavidBouhaben_WildCodeSchool_first_challenge/issues"
+  },
+  "homepage": "https://github.com/Darkheadbanger/DavidBouhaben_WildCodeSchool_first_challenge#readme",
+  "keywords": []
+}

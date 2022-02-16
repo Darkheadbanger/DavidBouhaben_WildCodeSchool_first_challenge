@@ -1,0 +1,4 @@
+// Button add
+@mixin btnAdd($coulour: $btn-shadow-color) {
+  box-shadow: $coulour 4px 4px 0 0;
+}
