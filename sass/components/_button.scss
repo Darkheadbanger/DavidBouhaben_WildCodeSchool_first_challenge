@@ -10,6 +10,10 @@
   user-select: none;
   cursor: pointer;
   &:hover {
-    background-color: white;
+    background-color: darken($color: #000000, $amount: 0);
+  }
+  &:active {
+    @include btnAddPressed;
+    transform: translate(2px, 2px);
   }
 }
