@@ -1,7 +1,11 @@
 // Button add
-@mixin btnAdd($coulour: $btn-shadow-color) {
+@mixin btnAddShadow($coulour: $btn-shadow-color) {
   box-shadow: $coulour 4px 4px 0 0;
 }
-@mixin btnAddPressed($coulour: $btn-shadow-color) {
+@mixin btnAddPressedShadow($coulour: $btn-shadow-color) {
   box-shadow: $coulour 2px 2px 0 0;
+}
+// Name add
+@mixin nameShadow($coulour: $coulour-shadow-name) {
+  box-shadow: $coulour 0px 20px 30px -10px;
 }
