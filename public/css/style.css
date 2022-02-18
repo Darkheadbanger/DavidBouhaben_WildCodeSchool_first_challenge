@@ -84,16 +84,19 @@ main {
   color: red;
   display: flex;
   flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
 }
 .member-list .member-item {
-  padding: 0 3rem;
-  margin: 2em 18em 4em 18em;
+  margin: 2em 0 2em 0;
   position: relative;
   line-height: 3em;
   border-radius: 10px;
   color: white;
   box-shadow: #26394d 0px 20px 30px -10px;
   background-color: #f76c6c;
+  text-align: center;
+  padding: 0em 7em;
 }
 
 footer {

@@ -6,14 +6,17 @@ main {
   color: $member-text-color;
   display: flex;
   flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
   .member-item {
-    padding: 0 3rem;
-    margin: 2em 18em  4em 18em ;
+    margin: 2em 0 2em 0;
     position: relative;
     line-height: 3em;
     border-radius: 10px;
     color: $name-text-color;
     @include nameShadow;
     background-color: $name-background;
+    text-align: center;
+    padding: 0em 7em;
   }
 }
