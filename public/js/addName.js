@@ -1,37 +1,60 @@
-// Recuperer member-item
-// recuperer btn
-// Recuperer l'input
-const buttonAdd = document.querySelector("#button-add");
-const inputName = document.querySelector("#name");
-const nameAdded = document.querySelector(".member-item");
-const memberList = document.querySelector(".member-list");
+const addButton = document.querySelector("#button-add");
+const addText = document.querySelector("#addName");
+const memberList = document.querySelector(".member-list"); // list-groupe
+const elements = [];
 
-function ajouterName(event) {
-  // Maintenant, je dois être sur de ne pas envoyer rien quand on clique sur le bouton ajouter
-  let nameText = inputName.value;
-  // Si le string est vide alors on ne retourne rien
-  let preventFromLoading = event.preventDefault()
-  if (nameText === "") {
-    return preventFromLoading;
+window.onload = function () {
+  if (JSON.parse(localStorage.getItem("todo-elements")) != null) {
+    [] = JSON.parse(localStorage.getItem("todo-elements"));
+    console.log("elements:", elements);
+    afficher();
+  }
+};
+function ajouterElement(event) {
+  // Pour eviter rafraichir la page
+  let preventDefault = event.preventDefault();
+
+  // Si l'input n'est pas vide, on peut écrire et ajouter
+  // Si non, on ne peut pas ajouter un string vide
+  if (addText.value.trim() === "") {
+    return preventDefault;
   } else {
-    preventFromLoading
-    // Si non, on va retourner le text avec tout le div
-    let htmlAdd = `
-    <div class="member-item">${nameText}</div>
-    `;
-    memberList.insertAdjacentHTML("beforeend", htmlAdd);
-    nameText++;
-    // Vider le string après avoir finit d'ajouter le nom
-    inputName.value = "";
+    elements.push(addText.value.trim());
+    // Maintenant, on doit sauvegarder tous cela dans le localstorage pour que la page mémorise les noms ajoutés
+    // Si le localstorage est null alors on retourne
+    if (localStorage.getItem("todo-elements") == null) {
+      localStorage.setItem("todo-elements", JSON.stringify(elements));
+    } else {
+      localStorage.setItem("todo-elements", JSON.stringify(elements));
+    }
+    console.log(localStorage.getItem("todo-elements"));
+
+    if (addText !== "") {
+      // Si le string n'est pas vide, ll faut l'ajouter au tableau vide élement
+      addText.value = "";
+    }
+    afficher();
   }
 }
-// On uyilise un addeventlistener en cas de clique sur le bouton "ajouter"
-buttonAdd.addEventListener("click", ajouterName);
-// Ici en cas que l'utilisateur appuie la tocuhe enter
-buttonAdd.addEventListener("keydown", (event) => {
-  if (event.key) {
-    ajouterName();
-  } else {
-    return;
+// Une fonction pour affihcer
+function afficher() {
+  memberList.innerHTML = "";
+  for (let i = 0; i < elements.length; i++) {
+    let nameHtmlAdd = `<div class="member-item">${
+      elements[i].charAt(0).toUpperCase() + elements[i].slice(1)
+    }</div>`;
+    memberList.innerHTML += nameHtmlAdd;
   }
-});
+}
+
+// function delete(index){
+//     // Ici, on crée une méthode pour effacer, j'utilise la méthode splice sur l'index
+//     // L'index est la position de l'element ou on a définit sur la boucle for
+//     tableauVide.splice(index, 1)
+// }
+
+// function modification(index) {
+
+// }
+
+addButton.addEventListener("click", ajouterElement);
