@@ -4,6 +4,18 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <link rel="stylesheet" href="./public/css/style.css" />
+    <link
+      href="/node_modules/@fortawesome/fontawesome-free/css/solid.css"
+      rel="stylesheet"
+    />
+    <link
+      href="/node_modules/@fortawesome/fontawesome-free/css/brands.css"
+      rel="stylesheet"
+    />
+    <link
+      href="/node_modules/@fortawesome/fontawesome-free/css/fontawesome.css"
+      rel="stylesheet"
+    />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Les Argonautes</title>
   </head>
@@ -18,9 +30,9 @@
         Les Argonautes
       </h1>
     </header>
-
-    <!-- Main section -->
+    <!-- Main wrapper -->
     <main>
+      <div>
       <!-- New member form -->
       <h2>Ajouter un(e) Argonaute</h2>
       <form class="new-member-form">
@@ -32,18 +44,19 @@
           placeholder="Charalampos"
         />
         <button id="button-add" role="button" type="submit">Ajouter</button>
+<!-- addName -->
+      </div>
       </form>
 
       <!-- Member list -->
       <h2>Membres de l'équipage</h2>
-      <section class="member-list">
-        <div class="member-item"></div>
+      <section class="member-list"> 
       </section>
     </main>
 
     <footer>
       <p>Réalisé par Jason en Anthestérion de l'an 515 avant JC</p>
     </footer>
-    <script defer src="./public/js/addName.js"></script>
+    <script type="module" defer src="./public/js/index.js"></script>
   </body>
 </html>
